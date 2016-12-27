@@ -14,7 +14,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.security.GeneralSecurityException;
-import java.util.List;
 
 /**
  * Created by Rocko on 2016/12/22.
@@ -29,7 +28,6 @@ public class DetectLandmark {
     private static final String APPLICATION_NAME = "facebook-report-domo";
 
     private static final int MAX_RESULTS = 4;
-
 
     public static void main(String[] args) throws IOException, GeneralSecurityException {
 //        if (args.length != 1) {
@@ -56,6 +54,7 @@ public class DetectLandmark {
     }
 
     // [START authenticate]
+
     /**
      * Connects to the Vision API using Application Default Credentials.
      */
@@ -87,7 +86,7 @@ public class DetectLandmark {
         Image image = new Image();
         URL url = new URL(uri);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ImageIO.write( ImageIO.read(url), "jpg", baos );
+        ImageIO.write(ImageIO.read(url), "jpg", baos);
         baos.flush();
         byte[] imageInByte = baos.toByteArray();
         baos.close();
